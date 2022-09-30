@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "5f2af2b7c0435048f4916881"
+  },
+  "deleted_by_user": false,
+  "deleted_by_azdan": false,
+  "ClassId": 1,
+  "ClassName": "ودجات",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f2af2c4c0435048f4916882"
+  },
+  "deleted_by_user": false,
+  "deleted_by_azdan": false,
+  "ClassId": 2,
+  "ClassName": "سلايدر",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f2af2d9c0435048f4916883"
+  },
+  "deleted_by_user": false,
+  "deleted_by_azdan": false,
+  "ClassId": 3,
+  "ClassName": "الاعجاز العددي",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f2af2f7c0435048f4916884"
+  },
+  "deleted_by_user": false,
+  "deleted_by_azdan": false,
+  "ClassId": 4,
+  "ClassName": "الإعجاز في الفلك",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f2af558c0435048f4916890"
+  },
+  "deleted_by_user": false,
+  "deleted_by_azdan": false,
+  "ClassId": 5,
+  "ClassName": "فيديوهات",
+  "__v": 0
+}]

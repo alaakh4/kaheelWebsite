@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "5e6e041aaad83a301c285ef1"
+  },
+  "email": "alkaheel12345678@gmail.com",
+  "Date": {
+    "$date": "2020-03-15T10:32:29.391Z"
+  },
+  "deleted_by_azdan": false,
+  "deleted_by_user": false,
+  "password": "$2a$10$hmDmLU//FTMe4QgxIICV9.8hgQnkhbPW846t9O7PWYx6hvhwi14rq"
+}]
