@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaheel</title>
+    <link href="assets/all.min.css" rel="stylesheet" type="text/css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+  
+    <!-- Custom styles for this template-->
+    <link href="assets/admin.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/bootstrap.bundle.min.js"></script>
+  
+    <!-- Core plugin JavaScript-->
+    <script src="assets/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+   <script type="application/javascript">
+       const apiMainURI = "http://localhost:299/api/";
+   </script>
+</head>
+<body>
+    
+    <form>
+        <div class=" container">
+            <div class=" row">
+
+          <div class="auth-login col-md-3">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter Your Password</label>
+        <input type="text" class="form-control" id="newPassword" aria-describedby="emailHelp" required>
+        <label for="exampleInputEmail1">Repeat Your Password</label>
+        <input type="text" class="form-control" id="newPasswordRepeated" aria-describedby="emailHelp" required>
+        <small id="resetMessage" class="form-text text-muted"><p id="passWrong" class="text-danger"></p></small>
+      </div>
+  
+      <div>             
+      <a class="btn btn-primary" onclick="updatePass()" href="#">Update Password</a></div>
+     
+    </form>
+    
+  </div>
+  </div>
+</div>
+<script src="assets/admin.min.js"></script>
+<script src="ViewModel/ResetPass.vm.js"></script>
+</body>
+</html>

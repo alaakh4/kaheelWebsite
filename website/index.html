@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>kaheel7</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Main Font -->
+	<!--
+	<script src="js/webfontloader.min.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+	</script>-->
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/splide.min.css">-->
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/fonts.min.css">-->
+	<!-- Core plugin JavaScript-->
+	<script src="assets/jquery.min.js"></script>
+	<!--<script src="https://raw.githubusercontent.com/hazzik/livequery/master/dist/jquery.livequery.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+	<script type="application/javascript">
+		const apiMainURI = "http://localhost:299/api/";
+		const imgURL = 'http://localhost:299/upload/'
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" href="css/zoom.css">
+	<link rel="stylesheet" type="text/css" href="./css/MyEdit.css">
+	<link rel="stylesheet" type="text/css" href="./css/fontawesome.css">
+
+</head>
+
+<body>
+	<!-- Fixed Sidebar Left -->
+
+	<div class="fixed-sidebar">
+		<div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
+			<div class="mCustomScrollbar" data-mcs-theme="dark">
+				<ul class="left-menu">
+					<li>
+						<a href="#" class="js-sidebar-open">
+							<svg class="olymp-menu-icon left-menu-icon" data-toggle="tooltip" data-placement="right"
+								data-original-title="OPEN MENU">
+								<use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a href="index.html">
+							<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"
+								data-original-title="photos-icon">
+								<use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use>
+							</svg>
+						</a>
+					</li>
+					<li data-bind="foreach:getClasses" class="test">
+						<a class="hrefClass" data-bind="attr:{href:'?Class='+ClassId}">
+							<img class="olymp-happy-faces-icon left-menu-icon imghover imgClass" data-toggle="tooltip"
+								data-placement="right" data-bind="attr:{src:imgURL + ClassId + '.jpg',title:ClassName}">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
+			<a href="index.html" class="logo">
+				<div class="img-wrap">
+					
+				</div>
+				<div class="title-block">
+					<h6 class="logo-title">Kaheel7</h6>
+				</div>
+			</a>
+
+			<div class="mCustomScrollbar" data-mcs-theme="dark">
+				<ul class="left-menu">
+					<li>
+						<a href="#" class="js-sidebar-open">
+							<svg class="olymp-close-icon left-menu-icon">
+								<use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use>
+							</svg>
+							<span class="left-menu-title">Collapse Menu</span>
+						</a>
+					</li>
+					<li>
+						<a href="index.html">
+							<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"
+								data-original-title="NEWSFEED">
+								<use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use>
+							</svg>
+							<span class="left-menu-title">الرئيسية</span>
+						</a>
+					</li>
+
+					<li data-bind="foreach: getClasses">
+						<a data-bind="attr:{href:'index.html?Class='+ClassId}">
+							<img class="olymp-happy-faces-icon left-menu-icon" data-toggle="tooltip"
+								data-placement="right" data-bind="attr:{title:ClassName,src:imgURL + ClassId + '.jpg'}">
+							<span class="left-menu-title" data-bind="text:ClassName"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- ... end Fixed Sidebar Left -->
+
+
+	<!-- Fixed Sidebar Left -->
+
+	<div class="fixed-sidebar fixed-sidebar-responsive">
+				<img  id="sidebar-left-responsive" src="img/k4.png" class="fixed-sidebar-left sidebar--small js-sidebar-open" alt="Olympus">
+			</a>
+		<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
+			<h6>أقسام الموقع</h6>
+
+			<div class="mCustomScrollbar" data-bind="foreach:getClasses" data-mcs-theme="dark">
+
+				<div class="control-block">
+					<div class="author-page author vcard inline-items">
+						<div class="author-thumb">
+							<a data-bind="attr:{href:'http://192.168.1.12:5502/?Class='+ClassId}">
+								<img style="width: 30px; height: 30px;"
+									data-bind="attr:{src:imgURL + ClassId + '.jpg'}" />
+							</a>
+						</div>
+						<div class="author-title">
+							<a style="color: darkgray;"
+								data-bind="attr:{href:'http://192.168.1.12:5502/?Class='+ClassId},text:ClassName">
+
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ... end Fixed Sidebar Left -->
+
+
+	<!-- Fixed Sidebar Right -->
+
+	<!-- ... end Fixed Sidebar Right -->
+
+
+	<!-- Fixed Sidebar Right-Responsive -->
+
+	<!-- ... end Fixed Sidebar Right-Responsive -->
+
+
+	<!-- Header-BP -->
+
+	<header class="header" id="site-header">
+		<div class="page-title">
+			<h6>kaheel7</h6>
+		</div>
+		<div class="header-content-wrapper">
+			<form id="searchForm" onsubmit="submit" class="search-bar w-search notification-list friend-requests">
+				<div class="form-group with-button">
+					<input id="search" class="form-control" dir="rtl" placeholder="ابحث" type="text">
+					<button>
+						<svg class="olymp-magnifying-glass-icon">
+							<use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use>
+						</svg>
+					</button>
+				</div>
+			</form>
+			<div class="control-block">
+
+				<div class=" more has-items">
+					<a class="f-icons whatsapp-icon" href="tel:+201127953335">
+					<i class="fab fa-whatsapp"></i>
+					<span style="font-size: 20px;">+201127953335</span></a>
+				</div>
+
+				<div class=" more has-items">
+					<a class="f-icons facebook-icon">
+					<i class="fab fa-facebook"></i>
+				</i></a>
+				</div>
+
+				<div class="more has-items">
+					<a class="f-icons instagram-icon">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
+				<div class="more has-items">
+				<a class="f-icons twitter-icon">
+					<i class="fab fa-twitter"></i>
+				</a>
+			</div>
+				<div class="author-page author vcard inline-items more">
+					Kaheel7
+				</div>
+
+			</div>
+		</div>
+
+	</header>
+
+	<!-- ... end Header-BP -->
+
+
+	<!-- Responsive Header-BP -->
+
+	<header class="header header-mobile-my-edit header-responsive" id="site-header-responsive">
+
+		<div class="header-content-wrapper">
+			<ul class="nav nav-mobile-my-edit nav-tabs mobile-app-tabs" role="tablist">
+				<li class="nav-item">
+					تويتر
+				</li>
+
+				<li class="nav-item">
+					فسبوك
+				</li>
+
+				<li class="nav-item">
+					واتس اب
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#searchPanes" role="tab">
+						<svg class="olymp-magnifying-glass-icon">
+							<use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use>
+						</svg>
+						<svg class="olymp-close-icon">
+							<use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Tab panes -->
+		<div class="tab-content tab-content-responsive">
+			<div class="tab-pane " id="searchPanes" role="tabpanel">
+				<form id="searchForm2" onsubmit="submit" class="search-bar w-search notification-list friend-requests">
+					<div class="form-group with-button">
+						<input id="searchMobile" class="form-control" dir="rtl" placeholder="ابحث" type="text">
+						<button>
+							<svg class="olymp-magnifying-glass-icon">
+								<use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use>
+							</svg>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- ... end  Tab panes -->
+
+	</header>
+
+	<!-- ... end Responsive Header-BP -->
+	<div class="header-spacer"></div>
+	<div class="article" id="article">
+		<div class="container">
+			<div class="row">
+
+				<!-- Main Content -->
+
+				<main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
+					<div class="card-body">
+						<div class="">
+
+							<div id="newsfeed-items-grid">
+
+								<div id="fullArticles" data-bind="foreach: getArticles">
+									<!-- ko if:(ClassId == 2)-->
+									<section style="width: 90%;margin: 0 0 0 5%;" data-bind="foreach:data" class="regular slider">
+										<div>
+											<a data-bind="attr:{href:References}">
+												<img style="height: 300px;width: 200px;" class="imghover"
+													data-bind="attr:{src:imgURL+_id+'.jpg'}">
+											</a>
+										</div>
+									</section>
+									<div data-bind="text:slider()"></div>
+									<!-- /ko -->
+									<div class="ui-block">
+										<!-- ko ifnot:(ClassId == 1) -->
+										<!-- ko ifnot:(ClassId == 2) -->
+										<article class="hentry post has-post-thumbnail">
+
+											<div class="post__author author vcard inline-items">
+												<a data-bind="attr:{href: classHref(ClassId) }"
+													style="float: right;margin-left: 10px;">
+													<img data-bind="attr:{src:imgURL + ClassId + '.jpg'}" /></a>
+												<div style="text-align: right; float: right;">
+													<a class="h6 post__author-name fn"
+														data-bind="text: getClassName(ClassId),attr:{href: classHref(ClassId) }"></a>
+													<div class="post__date">
+														<time class="published" data-bind="text: ArticleDate">
+														</time>
+													</div>
+												</div>
+												<div style="float: left;"><a href="#"
+														class="post-add-icon inline-items">
+
+														<svg class="olymp-share-icon">
+															<use
+																xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon">
+															</use>
+														</svg>
+														<span>مشاركة</span>
+													</a>
+												</div>
+											</div><br>
+											<p style="text-align: right; font-size: 25px;" class="ArticleName"
+												data-bind="html:ArticleName,attr:{id:_id}"></p>
+											<div data-bind="click: () => ReadMore(_id,ArticleText,References)">
+												<p class="ArticleText">
+													<span class="ArticleDesc" data-bind="html:ArticleDesc"></span>
+													<span data-bind="attr:{id:_id+'dots'}">...</span>
+													<span class="Read"
+														data-bind="html: ArticleText,attr:{id:_id+'Read'}"></span>
+													<a data-bind="attr:{id:_id+'ReadMore'}" style="color: #38a9ff;"
+														class=" pointer">إقرأ
+														المزيد</a>
+												</p>
+											</div>
+											<div class="ref" data-bind="attr:{id:_id+'ref'}">
+												<p data-bind="attr:{id:_id+'links'},click: () => showLinks(_id)">
+													:أظهر المراجع
+												</p>
+												<div
+													data-bind="html:LinksArray(References,ArticleText,_id),attr:{id:_id+'linkList'}">
+												</div>
+											</div>
+											<div data-bind="html:checkData(References,ArticleText,_id,video,MediaType)">
+											</div>
+										</article>
+										<!-- /ko -->
+										<!-- /ko -->
+
+										<!-- ko if:(ClassId == 1)-->
+										<article class="hentry post has-post-thumbnail wadja">
+											<div data-bind="attr:{id:_id}"></div>
+											<div>
+												<!-- ko if:(References) -->
+												<a data-bind="attr:{href:References}"><img width="100%"
+														data-bind="attr:{src:imgURL+_id+'.jpg'}">
+													<!-- ko if:(ArticleDesc) -->
+													<p class="ArticleText">
+														<span class="ArticleDesc" data-bind="html:ArticleDesc"></span>
+													</p>
+													<!-- /ko -->
+												</a>
+												<!-- /ko -->
+												<!-- ko ifnot:(References) -->
+												<img width="100%" data-bind="attr:{src:imgURL+_id+'.jpg'}">
+												<!-- ko if:(ArticleDesc) -->
+												<p class="ArticleText">
+													<span class="ArticleDesc" data-bind="html:ArticleDesc"></span>
+												</p>
+												<!-- /ko -->
+
+												<!-- /ko -->
+											</div>
+											<div></div>
+										</article>
+										<!-- /ko -->
+									</div>
+								</div>
+								<img id="MoreFromArticles" style="margin-left: 41.5%;width: 15%; height: 15%;"
+									src="./img/ezgif.com-crop.gif" />
+								<button id="MoreFromAPI" type="button" data-bind="click : () => moreDataFromAPI()"
+									class="btn btn-blue"
+									style="margin-left: 41.5%;width: auto; height: 15%;display: none;">مزيد من
+									المقالات</button>
+							</div>
+						</div>
+					</div>
+				</main>
+
+				<!-- ... end Main Content -->
+
+
+				<!-- Left Sidebar -->
+
+				<aside class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-12">
+					<div class="ui-block" style="width: 80%;margin-left: 35px;">
+						<img src="./img/555(1).gif" width="100%" height="90%">
+
+					</div>
+
+					<div class="ui-block" style="width: 80%;margin-left: 35px;">
+						<img src="./img/33.gif" width="100%" height="90%">
+					</div>
+
+					<div class="ui-block">
+
+					</div>
+				</aside>
+
+				<!-- ... end Left Sidebar -->
+
+
+				<!-- Right Sidebar -->
+
+				<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+					<div class="ui-block" style="width: 80%; margin-left: 35px;text-align: center;">
+						<img src="./img/3434.jpg" width="100%">
+					</div>
+
+
+					<div class="ui-block" style="width: 80%;margin-left: 35px;text-align: center;">
+						<img src="./img/thanks.jpg" width="100%">
+					</div>
+
+					<div class="ui-block" style="width: 80%;margin-left: 35px;text-align: center;">
+						<img src="./img/earth-rotate.gif" width="100%">
+					</div>
+
+
+					<div class="ui-block" style="width: 80%;margin-left: 35px;text-align: center;">
+						<img src="./img/learning-sleep.jpg" width="100%">
+					</div>
+
+				</aside>
+
+				<!-- ... end Right Sidebar -->
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Window-popup Update Header Photo -->
+	<script src="./ViewModel/index.vm.js"></script>
+	<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
+	<!-- شغلات اضافية
+	<script src="js/jquery.mousewheel.js"></script>
+	<script src="js/jquery.matchHeight.js"></script>
+	<script src="js/imagesloaded.pkgd.js"></script>
+	<script src="js/Headroom.js"></script>
+	<script src="js/velocity.js"></script>
+	<script src="js/ScrollMagic.js"></script>
+	<script src="js/jquery.waypoints.js"></script>
+	<script src="js/jquery.countTo.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/smooth-scroll.js"></script>
+	<script src="js/selectize.js"></script>
+	<script src="js/swiper.jquery.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/daterangepicker.js"></script>
+	<script src="js/simplecalendar.js"></script>
+	<script src="js/fullcalendar.js"></script>
+	<script src="js/isotope.pkgd.js"></script>
+	<script src="js/ajax-pagination.js"></script>
+	<script src="js/Chart.js"></script>
+	<script src="js/chartjs-plugin-deferred.js"></script>
+	<script src="js/circle-progress.js"></script>
+	<script src="js/loader.js"></script>
+	<script src="js/run-chart.js"></script>
+	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="js/jquery.gifplayer.js"></script>
+	<script src="js/mediaelement-and-player.js"></script>
+	<script src="js/mediaelement-playlist-plugin.min.js"></script>
+    -->
+	<!-- JS Scripts -->
+
+	<!--<script src="js/jquery.appear.js"></script>-->
+	<!--<script src="js/svgxuse.js"></script>-->
+	<script src="js/slick.js" charset="utf-8"></script>
+	<script src="js/material.min.js"></script>
+	<script src="js/bootstrap-select.js"></script>
+	<script src="js/base-init.js"></script>
+	<!--<script defer src="fonts/fontawesome-all.js"></script>-->
+	<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+	<script src="js/zoom.js"></script>
+	<script src="js/perfect-scrollbar.js"></script>
+	<script src="js/all.js"></script>
+	<script>
+
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>Kaheel</title>
+  
+   <!-- Custom fonts for this template-->
+   <link href="assets/all.min.css" rel="stylesheet" type="text/css">
+   <link
+     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+     rel="stylesheet">
+ 
+   <!-- Custom styles for this template-->
+   <link href="assets/admin.min.css" rel="stylesheet">
+   <!-- Bootstrap core JavaScript-->
+   <script src="assets/jquery.min.js"></script>
+   <script src="assets/bootstrap.bundle.min.js"></script>
+ 
+   <!-- Core plugin JavaScript-->
+   <script src="assets/jquery.easing.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" type="text/javascript"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+   
+  <script type="application/javascript">
+      const apiMainURI = "http://localhost:299/api/";
+  </script>
+
+</head>
+<body id="page-top" >
+
+              <form>
+                  <div class=" container">
+                      <div class=" row">
+
+                    <div class="auth-login col-md-3">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="password">
+                </div> 
+                <div>       
+                  <small class="form-text text-muted" ><p id="error" class="text-danger"></p></small>     
+                <a class="btn btn-primary" onclick="login()" href="#">Submit</a></div>
+                <div style="margin-top: 10px;">
+                <a href="#" onclick="forgetPass()" style="color: blue;">forget password?</a></div>
+              </form>
+              
+            </div>
+            </div>
+        </div>
+
+        <script src="assets/admin.min.js"></script>
+        <script src="ViewModel/Auth.vm.js"></script>
+</body>
+</html>

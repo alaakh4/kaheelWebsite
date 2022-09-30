@@ -1,0 +1,130 @@
+@font-face{
+    font-family: article-body;
+    src: url('fonts/DroidKufi-Regular.ttf');
+}
+@font-face{
+    font-family: article-name;
+    src: url('fonts/DroidKufi-Bold.ttf');
+}
+@font-face{
+    font-family: links;
+    src: url('fonts/Calibri Bold Italic.ttf');
+}
+.header-mobile-my-edit, .nav-mobile-my-edit{
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
+
+.highlight{
+   background-color : yellow;
+   text-align: left !important;
+
+}
+.ArticleText,.ArticleDesc,.ArticleName{
+    text-align: right;
+    font-size: 16px;
+    line-height:1.5em;
+    
+    direction: rtl
+    }
+    
+    .Read,.ref{
+      display: none;
+    }
+    .rtl{
+      direction: rtl
+    }
+    .ArticleText,.ArticleDesc{
+        font-family: article-body !important;
+        font-size: 17px !important;
+        color: dimgray !important;
+        line-height: 30px !important;
+        margin-top: 10px !important;
+    }
+    .ArticleName{
+        font-family: article-body !important;
+        color: darkblue;
+        font-size: 21px !important;
+    }   
+    .ref{
+        font-size: medium !important;
+        font-family: links !important;
+    }
+    .wadja{
+        padding: 10px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 5px;
+    }
+
+    .slick-slide img {
+      width: 40%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: 1;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+    .pointer {
+      cursor: pointer;
+    }
+    .imghover:hover {
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+    }
+    .imgClass{
+      width: 25px !important;
+      height: 30px !important;
+    }
+    .hrefClass{
+      padding-bottom: 2% !important;
+    }
+    @media (max-width: 799px){
+      .slick-arrow{
+        display: none;
+      }
+    }
+
+    .f-icons{
+      font-size: 200%;
+      color:#888da8;
+      margin: 5px;
+    }
+    .a-header{
+      background-color: #3f4257;
+    }
+    .whatsapp-icon:hover{
+      color: lawngreen !important;
+    }
+    .instagram-icon:hover{
+      color: magenta !important;
+    }
+    .facebook-icon:hover{
+      color: blue !important;
+    }
+    .twitter-icon:hover{
+      color: cyan !important;
+    }

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Kaheel</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="assets/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="assets/admin.min.css" rel="stylesheet">
+  <!-- Bootstrap core JavaScript-->
+  <script src="assets/jquery.min.js"></script>
+  <script src="assets/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="assets/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+  <script type="application/javascript">
+    const apiMainURI = "http://localhost:299/api/";
+  </script>
+
+
+</head>
+
+<body id="page-top" data-bin="if: viewModel.entityData.length > 0">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- sidebar here -->
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+          <span class="brand"></span>
+        </div>
+        <div class="sidebar-brand-text mr-3">Kaheel<sup>6</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider mb-0">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-file-contract"></i>
+          <span>Reports</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        List
+      </div>
+
+
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./Class.table.html">
+          <i class="fas fa-mouse-pointer"></i>
+          <span>الأقسام</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./Article.table.html">
+          <i class="fas fa-mouse-pointer"></i>
+          <span>المقالات</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="./Setting.table.html">
+          <i class="fas fa-mouse-pointer"></i>
+          <span>الإعدادت</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item" onclick="logout()">
+        <a class="nav-link collapsed" href="#">
+          <i class="fas fa-mouse-pointer"></i>
+          <span>logOut</span>
+        </a>
+      </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid mt-n4 p-0 bg-white">
+
+          <!-- Page Heading -->
+          <div class="container">
+            <form class="py-2">
+              <div class="row">
+                <div class="col m-3 pt-3">
+                  <h5 class="font-weight-normal pb-1 text-dark d-block">Setting</h5>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Page content -->
+        <form id="mainForm" onsubmit="submit">
+
+          <div class="container mt-3">
+            <div class="tab-content bg-white p-4 mb-5" id="myTabContent">
+              <div class="tab-pane fade show active" id="basic" role="tabpanel" aria-labeledby="basic-tab">
+                <div class="row">
+                  <div class="col">
+                    <h5 class="font-weight-lighter pt-0 text-dark">SettingName</h5>
+
+                    <!-- ko if: (location.search == "?edit" && !!entityPrefill) -->
+                    <input type="text" style="margin-top:5px" class="form-control .SettingName" id="SettingName"
+                      data-bind="value: entityPrefill.SettingName" placeholder="SettingName" required />
+                    <!-- /ko -->
+
+                    <!-- ko ifnot:(location.search == "?edit" && !!entityPrefill) -->
+                    <input type="text" style="margin-top:5px" class="form-control" id="SettingName"
+                      placeholder="SettingName" required />
+                    <!-- /ko -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h5 class="font-weight-lighter pt-0 text-dark">SettingValue</h5>
+
+                    <!-- ko if: (location.search == "?edit" && !!entityPrefill) -->
+                    <input type="text" style="margin-top:5px" class="form-control .SettingValue" id="SettingValue"
+                      data-bind="value: entityPrefill.SettingValue" placeholder="SettingValue" />
+                    <!-- /ko -->
+
+                    <!-- ko ifnot:(location.search == "?edit" && !!entityPrefill) -->
+                    <input type="text" style="margin-top:5px" class="form-control" id="SettingValue"
+                      placeholder="SettingValue" />
+                    <!-- /ko -->
+                  </div>
+                </div>
+              </div>
+              <!-- End -->
+              <div class="tab-pane fade" id="groupItem" role="tabpanel" aria-labelledby="qty-tab">
+                <h5>Customization</h5>
+                <span>Can personalize the product by entering some text or by providing custom image files.</span>
+
+                <button class="d-block mt-4 btn btn-secondary add-more-btn"><i class="fas fa-plus-circle"></i> Add a
+                  customization
+                  items</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="alert alert-primary" role="alert" id="msg" style="display:none"></div>
+          <!-- /.container -->
+          <!-- Status -->
+          <section class="status fixed-bottom w-100 shadow sticky-footer bg-white py-3">
+            <div class="container my-auto">
+              <div class="row">
+                <div class="col-5 offset-md-2">
+                  <div class="row">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn-secondary col-4" onclick="window.history.back()">Cancel</button>
+                      <button class="btn btn-success col-6">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </form>
+        <script src="ViewModel/Setting.vm.js"></script>
+
+      </div>
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <!--<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+  <!--<div data-bind="ifnot: viewModel.entityData.length > 0 ">
+      <h1>you are not authenticated</h1>
+    </div>-->
+
+  <!-- Custom scripts for all pages-->
+  <script src="assets/admin.min.js"></script>
+</body>
+
+</html>
